@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/CSS_Masterpase.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <link href="js/rateit.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css" />
+    <script src="js/slider.js"></script>
+        <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+    <form id="form1" runat="server" >
+        <div class ="khung">
+            <div class ="menu1">
+                <ul>
+                    <li ><a style="color:#0f30e0" href="#">Tài khoản của tôi</a></li>
+                    <li><a style="color:#0f30e0" href="DangNhapKH.aspx">Đăng nhập</a></li>
+                    <li><a style="color:#0f30e0" href="DangKy.aspx">Đăng ký</a></li>
+                </ul>
+            </div>
+            <div class="header">
+                <img src="image/banner.png" width="100%" height="130"/>
+            </div>
+
+            <div class ="menu">
+                <ul class="menucap0">
+            	    <li><a href="TrangChu.aspx">Trang chủ</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Sản phẩm</a>
+                	    <ul class="menucap1">
+                    	    <li><a href="#">Iphone</a></li>
+                            <li><a href="#">SamSung</a></li>
+                            <li><a href="#">Oppo</a></li>
+                            <li><a href="#">Xixaomi</a></li>
+                            <li><a href="#">Huawei</a></li>
+                            <li><a href="#">Sony</a></li>
+                            <li><a href="#">Nokia</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Liên hệ</a></li>
+                   <li style="margin-top:-6px; margin-left:130px;">
+                        <asp:TextBox ID="txtsearch" runat="server" Height="30px" Width="180px" ></asp:TextBox></li>
+                        <asp:ImageButton  ID="btnseach" runat="server" ImageUrl="~/image/search.PNG" OnClick="btnsearch_Click" Height="30px"  />
+                </ul>
+                <p>
+                    &nbsp;</p>
+          </div>
+        <div class="slideshow-container">
+              <div class="mySlides fade">
+                <img src="image/slide1.jpg" width="1100" height="250" />
+              </div>
+              <div class="mySlides fade">
+                <img src="image/slide2.jpg" width="1100" height="250" />
+              </div>
+              <div class="mySlides fade">
+                <img src="image/slide3.png"  width="1100" height="250"  />
+              </div>
+            <div class="mySlides fade">
+                <img src="image/slide4.png"  width="1100" height="250" />
+              </div>
+            <div class="mySlides fade">
+                <img src="image/slide5.png"  width="1100" height="250"  />
+              </div>
+             <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(0)" ></span> 
+              <span class="dot" onclick="currentSlide(1)" ></span> 
+              <span class="dot" onclick="currentSlide(2)" ></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)" ></span> 
+            </div>
+            </div>
+           
+           
+             <div class="content">
+                <div class ="left">
+                    <div class="title_box"><a href="#">DANH MỤC</a>
+
+
+                    </div>
+                    <asp:DataList ID="DataList1" runat="server" Width="191px" >
+                            <ItemTemplate>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:HyperLink style="color:#0f30e0" ID="HyperLink1" runat="server" Font-Size="Medium" Text='<%# Eval("TenLoai") %>' BorderStyle="None" NavigateUrl='<%# "LoaiSP.aspx?maloai=" + Eval("MaLoai") %>'></asp:HyperLink>
+                            </ItemTemplate>
+                        </asp:DataList>
+
+                   <div class="title_box2"><a href="#">TÌM KIẾM</a>
+
+
+                       
+                           <table style="width:100%;">
+                               <tr>
+                                   <td style="color:red">Tìm kiếm tên</td>
+                               </tr>
+                               <tr>
+                                   <td><asp:TextBox ID="txtTK" runat="server" Width="168px"></asp:TextBox></td>
+                               </tr>
+                               <tr>
+                                   <td style="color:red">Tìm kiếm giá</td>
+                               </tr>
+                               <tr>
+                                   <td>
+
+                           <asp:DropDownList ID="drlgiatu" runat="server" Height="24px" Width="160px">
+                               <asp:ListItem>--Chọn giá từ--</asp:ListItem>
+                               <asp:ListItem Value="1000000"></asp:ListItem>
+                               <asp:ListItem Value="5000000"></asp:ListItem>
+                               <asp:ListItem Value="10000000"></asp:ListItem>
+                               <asp:ListItem Value="15000000"></asp:ListItem>
+                               <asp:ListItem Value="2000000"></asp:ListItem>
+                               <asp:ListItem Value="25000000"></asp:ListItem>
+                               <asp:ListItem Value="30000000"></asp:ListItem>
+                               <asp:ListItem Value="35000000"></asp:ListItem>
+                           </asp:DropDownList>
+
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+
+                           <asp:DropDownList ID="drlgiaden" runat="server" Height="24px" Width="160px">
+                               <asp:ListItem>--Chọn giá đến--</asp:ListItem>
+                               <asp:ListItem Value="10000000"></asp:ListItem>
+                               <asp:ListItem Value="15000000"></asp:ListItem>
+                               <asp:ListItem Value="20000000"></asp:ListItem>
+                               <asp:ListItem Value="25000000"></asp:ListItem>
+                               <asp:ListItem Value="30000000"></asp:ListItem>
+                               <asp:ListItem Value="35000000"></asp:ListItem>
+                               <asp:ListItem Value="40000000"></asp:ListItem>
+                           </asp:DropDownList>
+
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>
+
+                           <asp:ImageButton ID="btnTK" runat="server" Height="44px" ImageUrl="~/image/TK.PNG"  Width="161px" OnClick="btnTK_Click" />
+
+                                   </td>
+                               </tr>
+                           </table>
+               </div>
+                <div class="title_box5">QUẢNG CÁO
+                    
+                 
+                    <a href='https://viettelpost.com.vn/'><asp:ImageButton ID="ImageButton2" runat="server" Height="210px" ImageUrl="~/image/viettelpost.jpg" Width="170px" OnClick="ImageButton2_Click" /></a>
+                    <a href='https://ghn.vn/'><asp:ImageButton ID="ImageButton3" runat="server" Height="190px" ImageUrl="~/image/giaohangnhanh.jpg" Width="170px" OnClick="ImageButton3_Click" /></a>
+                </div>
+          </div>
+                 
+
+                <div class ="main">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                      
+        
+                    </asp:ContentPlaceHolder>
+                </div>
+                 <div class="right">
+                     <div class="title_box1"><a href="GioHang.aspx">GIỎ HÀNG</a></div>
+                        <p style="text-align:center"><asp:ImageButton ID="ImageButton1" runat="server" Height="99px" ImageAlign="Middle" ImageUrl="~/image/shopping_cart_red.png" Width="114px" OnClick="ImageButton1_Click" /></p>
+            
+            <div class="title_box3"><a href="#">SẢN PHẨM MỚI</a>
+            	
+                </div>
+                     <Center>	
+                      <asp:DataList ID="DataList2" runat="server" Width="191px" >
+                            <ItemTemplate>
+                                <asp:Image ID="Image1" runat="server" Height="123px" Width="131px"  ImageUrl='<%# "image/" + Eval ("Anh") %>' />
+                                <center><asp:HyperLink ID="HyperLink2" runat="server" Text='<%# Eval("TENSP") %>' Width="150px"></asp:HyperLink></center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:HyperLink ID="HyperLink3" runat="server" Text='<%# Eval("GIABAN") %>'></asp:HyperLink>đ
+                            </ItemTemplate>
+                        </asp:DataList>
+              	</Center>
+            </div>
+        </div>
+
+              
+            <div class ="footer">
+                <div class="left_footer">
+           		Hỗ trợ trực tuyến 
+                Ms.Nhung 0866095048
+            </div>
+     		<div class="center_footer">
+           		Cửa hàng điện thoại TC 
+           		Địa chỉ: A7/42 Nguyễn Thị Tú, Quận Bình Tân, TP.HCM
+            </div>
+      		<div class="right_footer">
+                <a href="#">Trang chủ</a>
+                <a href="#">Giới thiệu</a>
+                <a href="#">Liên hệ</a>
+        	</div>
+            </div>
+       
+        </div>
+
+    </form>
+</body>
+    <script>
+        //khai báo biến slideIndex đại diện cho slide hiện tại
+        var slideIndex;
+        // KHai bào hàm hiển thị slide
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex].style.display = "block";
+            dots[slideIndex].className += " active";
+            //chuyển đến slide tiếp theo
+            slideIndex++;
+            //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+            if (slideIndex > slides.length - 1) {
+                slideIndex = 0
+            }
+            //tự động chuyển đổi slide sau 10s
+            setTimeout(showSlides, 10000);
+        }
+        //mặc định hiển thị slide đầu tiên 
+        showSlides(slideIndex = 0);
+
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    </script>
+</html>

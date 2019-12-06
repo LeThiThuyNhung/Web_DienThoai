@@ -1,0 +1,108 @@
+﻿.khung{
+	width:100%;
+	height:auto;
+	border:1px solid #000;
+	margin:auto;
+}
+
+.header{
+	width:100%;
+	height:130px;
+	
+}
+
+    .header img {
+        width:100%;
+	height:130px;
+    }
+.menu{
+	width:100%;
+    height:60px;
+	height:50px;
+	border:1px solid #000;
+	background-color:black;
+}
+
+.menu ul{
+	width : 100%;
+	height: 30px;
+	list-style:none;
+	text-transform:uppercase;
+}
+.menu ul li{
+	float:left;
+	line-height:30px;
+	margin-left:50px;	
+	position:relative;
+	
+	
+}
+.menu ul li a{
+	color:#FFF;
+	text-decoration:none;
+	margin:0px 22px 0px 35px;
+	
+}
+.menu a:hover{
+	color:red;
+}
+.menu .menucap1{
+	display:none;
+	position:absolute;
+}
+
+
+.menu .menucap1 li{
+	border:1px inset;
+	text-transform:none;
+	width:auto;
+   
+}
+.menu .menucap0 li:hover .menucap1 {
+	display:block;
+    color:red;
+}
+
+.menu .menucap0 .menucap1{
+	display:none;
+	position:absolute;
+}
+
+.menu .menucap0 .menucap1 li{
+	background-color:black;
+	border-top:1px solid #fff;
+	text-transform:none;
+	width:190px;
+	margin:0px 0px 0px -20px;
+	color:#F00;
+}
+
+.menu .menucap0 .menucap1 .menucap2{
+	display:none;
+	position:absolute;
+}
+
+.menu .menucap0 .menucap1 .menucap2 li{
+	background-color:black;
+	border-top:1px solid #fff;
+	text-transform:none;
+	width:190px;
+	top:-60px;
+	left:170px;
+}
+
+.menu .menucap0 .menucap1 li:hover .menucap2 {
+	margin-top:30px;
+    display:block;
+}
+
+
+.menu .menucap0 .menucap1 li a{
+	color:#FFF;
+}
+
+    .menu .menucap0 .menucap1 li a:hover {
+        color:red;
+    }
+
+
